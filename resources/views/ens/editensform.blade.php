@@ -1,27 +1,29 @@
 @extends('layouts.app')
-@section('content')
+@section('content3')
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <form  action="{{url('home/'.$ens->id)}}" method="put">
-            <input type="hidden" name="_token" value="{{csrf_token()}}" >
+            <form  method="post" action="{{url('getens/'.$enseignant->id)}}" >
+            @method('PUT')
+            @csrf
+            <input type="hidden">
 
             <h1 style="text-align:center"> Modifier un enseignant</h1>
             <br/>
             <br/>
                 <div class="form-group">
                 <label for="Name">Name:</label>
-                <input type="text" name="name" class="form-control" value="{{$ens->name}}">
+                <input type="text" name="name" class="form-control" value="{{$enseignant->name}}">
                 </div>
 
                 <div class="form-group">
                 <label for="Email">Email:</label>
-                <input type="text" name="email" class="form-control" value="{{$ens->email}}">
+                <input type="text" name="email" class="form-control" value="{{$enseignant->email}}">
                 </div>
 
                 <div class="form-group">
                 <label for="Grade">Grade:</label>
-                <input type="text" name="grade" class="form-control" value="{{$ens->grade}}">
+                <input type="text" name="grade" class="form-control" value="{{$enseignant->grade}}">
                 </div>
 
                 <div class="form-group">

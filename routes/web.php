@@ -18,14 +18,20 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/home', 'EnsController@dash')->name('home');
+
+Route::get("getadmins","EnsController@getadmins");
+Route::get("getens","EnsController@getens");
+
+
+
 
 /**Les routes de l'enseignant */
 /**ajouter enseignant */
 Route::get('/iEnsForm', 'EnsController@iEnsForm');
 Route::post('enstore','EnsController@store');
 /**modfier enseignant */
-Route::get('home/{id}/edit','EnsController@editEns');
-Route::put('home/{id}','EnsController@update');
+Route::get('getens/{id}/edit','EnsController@editEns');
+Route::put('getens/{id}','EnsController@update');
+
 /**supprimer enseignant */
-Route::delete('home/{id}','EnsController@destroy')->name('ens.destroy');
+Route::delete('getens/{id}','EnsController@destroy')->name('ens.destroy');
