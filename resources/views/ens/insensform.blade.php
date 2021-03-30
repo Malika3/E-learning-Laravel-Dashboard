@@ -4,6 +4,7 @@
     <div class="row">
         <div class="col-md-12">
             <form  action="{{url('enstore')}}" method="post">
+            <input type="hidden" name="_method" value="PUT">
             <input type="hidden" name="_token" value="{{csrf_token()}}" >
 
             <h1 style="text-align:center"> Ajouter un enseignant</h1>
@@ -22,7 +23,7 @@
                 </div>
 
                 <div class="form-group">
-                <input type="submit" class="form-control btn btn-primary">
+                <input type="submit" class="form-control btn btn-primary" value="Ajouter">
                 </div>
             </form>
         </div>

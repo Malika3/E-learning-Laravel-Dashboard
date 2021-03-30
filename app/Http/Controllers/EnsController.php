@@ -7,12 +7,11 @@ use Illuminate\Http\Request;
 use App\Enseignant;
 class EnsController extends Controller
 {
-    //  //La méthode d'affichage
-    public function getens(){
-        $ens= DB:: select('select * from enseignants');
-        return view('ens',['ens' => $ens]);
-  }
 
+    public function __construct(){
+         $this->middleware('auth');
+    }
+   
   public function dash(){
     return view ('home');
   }
@@ -37,12 +36,12 @@ public function store(Request $req){
 public function editEns(Request $req2, $id){
     $ens = Enseignant::find($id);
     
-    return view('editEns',['enseignant' => $ens]);
+    return view('ens.editensform',['enseignant' => $ens]);
 }
 
-public function update(Request $request,$id){
+public function update(Request $request, $id){
 
-  $ens = Voiture::find($id);
+  $ens = Enseignant::find($id);
   $ens->name=$request->input('name');
   $ens->email=$request->input('email');
   $ens->grade=$request->input('grade');
