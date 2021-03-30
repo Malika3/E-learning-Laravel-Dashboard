@@ -19,4 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/**Les routes de l'enseignant */
+Route::get('/home', 'EnsController@dash')->name('home');
+Route::get('/iEnsForm', 'EnsController@iEnsForm');
+Route::post('enstore','EnsController@store');
+
+Route::delete('home/{id}','EnsController@destroy')->name('ens.destroy');
+Route::get('home/{id}/edit','EnsController@edit');
+Route::put('home/{id}','EnsController@update');
+
