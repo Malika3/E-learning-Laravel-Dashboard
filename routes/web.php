@@ -28,7 +28,7 @@ Route::get("getens","EnsController@getens");
 /**Les routes de l'enseignant */
 /**ajouter enseignant */
 Route::get('/iEnsForm', 'EnsController@iEnsForm');
-Route::post('enstore','EnsController@store');
+Route::post('getens','EnsController@store');
 /**modfier enseignant */
 Route::get('getens/{id}/edit','EnsController@editEns');
 Route::put('getens/{id}','EnsController@update');

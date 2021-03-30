@@ -29,12 +29,13 @@ class EnsController extends Controller
   }
 
 public function store(Request $req){
-    $ens=new Enseignant;
-    $ens->name = $req->input('name');
-    $ens->email = $req->input('email');
-    $ens->grade = $req->input('grade');
-    $ens->save();
-    return view('ens',['enseignants' => $ens]);
+  $ens=new Enseignant;
+  $ens->name = $req->input('name');
+  $ens->email = $req->input('email');
+  $ens->grade = $req->input('grade');
+  $ens->save();
+  return redirect('getens');    
+
 
 }
 //La méthode de modification

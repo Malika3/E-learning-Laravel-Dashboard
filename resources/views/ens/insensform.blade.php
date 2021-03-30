@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <form  action="{{url('enstore')}}" method="post">
+            <form  action="{{url('getens')}}" method="post">
             <input type="hidden" name="_token" value="{{csrf_token()}}" >
             <h1 style="text-align:center"> Ajouter un enseignant</h1>
             <br/>
