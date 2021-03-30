@@ -126,7 +126,7 @@
                                  </div>
                                  <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                    <form method="post" action="{{ route('ens.destroy',$ens->id) }}" >
+                                    <form method="post" action="{{url('getens/'.$ens->id)}}" >
                                         {{csrf_field()}}
                                         {{method_field('DELETE')}}
                                       <input type="submit" value="Oui" class="btn btn-danger" />
