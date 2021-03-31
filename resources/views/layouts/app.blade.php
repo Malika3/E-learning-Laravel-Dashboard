@@ -69,9 +69,11 @@
                 </nav>
 
                 <main class="py-4">
-                    @yield('content')
-                    @yield('content2')
-                    @yield('content3')
+                    @yield('content') <!--Admins-->
+                    @yield('content2') <!--Ens-->
+                    @yield('content3') <!--EditEns-->
+                    @yield('content4') <!--Salles-->
+
 
 
                 </main>

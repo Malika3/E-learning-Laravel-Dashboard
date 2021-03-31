@@ -1,9 +1,9 @@
 @extends('layouts.app')
-@section('content2')
+@section('content4')
 
   <div class="wrapper ">
     <div class="sidebar" data-color="orange">
-            <!-- Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow -->
+      <!-- Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow -->
       <div class="logo">
        
         <h5 style="color:white">E-learn Dashboard</h5>
@@ -17,7 +17,7 @@
             </a>
           </li>
           <li>
-          <li class="active ">
+          <li >
             <a href="/getens">
               <i class="now-ui-icons users_single-02"></i>
               <p>Enseignants</p>
@@ -42,8 +42,8 @@
             </a>
           </li>
           
-          <li>
-            <a href="./notifications.html">
+          <li class="active ">
+            <a href="/getsalles">
               <i class="now-ui-icons design_app"></i>
               <p>Salles</p>
             </a>
@@ -72,7 +72,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Les enseignants</h4>
+                <h4 class="card-title">Les salles</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -82,7 +82,7 @@
                         ID
                       </th>
                       <th>
-                        NOM
+                        NUMERO DE SALLE
                       </th>
                       <th>
                         E-MAIL
@@ -92,6 +92,7 @@
                       </th>
                     </thead>
                     <tbody>
+                 
                     @foreach ($enseignants as $ens)
                       <tr>
                         <td>
@@ -117,7 +118,7 @@
                              <div class="modal-dialog modal-dialog-centered" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                    <h6 class="modal-title" id="exampleModalLongTitle">Etes-vous sur de supprimer cet enseignant?</h6>
+                                    <h6 class="modal-title" id="exampleModalLongTitle">Etes-vous sur de supprimer cette salle?</h6>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -142,7 +143,7 @@
                     </tbody>
 
                   </table>
-                  <button type="submit" class="btn btn-warning" style="position:relative;left:500px"><a href="/iEnsForm" style="color:white;">Ajouter un enseignant</a></button>
+                  <button type="submit" class="btn btn-warning" style="position:relative;left:500px"><a href="/iEnsForm" style="color:white;">Ajouter une salle</a></button>
                 </div>
               </div>
             </div>

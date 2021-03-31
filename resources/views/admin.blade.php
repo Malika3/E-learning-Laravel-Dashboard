@@ -3,12 +3,10 @@
 
   <div class="wrapper ">
     <div class="sidebar" data-color="orange">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
-    -->
+            <!-- Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow -->
       <div class="logo">
        
-        <h5>Dashboard</h5>
+      <h5 style="color:white">E-learn Dashboard</h5>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
