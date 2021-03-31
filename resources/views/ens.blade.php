@@ -43,7 +43,7 @@
           </li>
           
           <li>
-            <a href="./notifications.html">
+            <a href="/getsalles">
               <i class="now-ui-icons design_app"></i>
               <p>Salles</p>
             </a>

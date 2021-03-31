@@ -82,34 +82,23 @@
                         ID
                       </th>
                       <th>
-                        NUMERO DE SALLE
-                      </th>
-                      <th>
-                        E-MAIL
-                      </th>
-                      <th>
-                        GRADE
-                      </th>
+                        NOM DE LA SALLE 
+                      </th>      
                     </thead>
                     <tbody>
                  
-                    @foreach ($enseignants as $ens)
+                    @foreach ($salles as $s)
                       <tr>
                         <td>
-                        {{$ens->id}}
+                        {{$s->id}}
                         </td>
                         <td>
-                        {{$ens->name}}
+                        {{$s->nom}}
 
                         </td>
-                        <td>
-                        {{$ens->email}}
-                        </td>
-                        <td>
-                        {{$ens->grade}}
-                        </td>
+                        
                         <td class="text-right">
-                        <a href="{{url('getens/'.$ens->id.'/edit')}}" class='btn btn-success'>Modifier</a>
+                        <a href="{{url('getsalles/'.$s->id.'/edit')}}" class='btn btn-success'>Modifier</a>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
                           Supprimer
                         </button>
@@ -125,7 +114,7 @@
                                  </div>
                                  <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                    <form method="post" action="{{url('getens/'.$ens->id)}}" >
+                                    <form method="post" action="{{url('getsalles/'.$s->id)}}" >
                                         {{csrf_field()}}
                                         {{method_field('DELETE')}}
                                       <input type="submit" value="Oui" class="btn btn-danger" />
@@ -143,7 +132,7 @@
                     </tbody>
 
                   </table>
-                  <button type="submit" class="btn btn-warning" style="position:relative;left:500px"><a href="/iEnsForm" style="color:white;">Ajouter une salle</a></button>
+                  <button type="submit" class="btn btn-warning" style="position:relative;left:500px"><a href="/insalleform" style="color:white;">Ajouter une salle</a></button>
                 </div>
               </div>
             </div>

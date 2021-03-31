@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get("getadmins","EnsController@getadmins");
 Route::get("getens","EnsController@getens");
+Route::get("getsalles","SalleController@getsalles");
+
 
 
 
@@ -35,3 +37,18 @@ Route::put('getens/{id}','EnsController@update');
 
 /**supprimer enseignant */
 Route::delete('getens/{id}','EnsController@destroy')->name('ens.destroy');
+
+
+/**Les routes de la salle */
+Route::get('/insalleform', 'SalleController@insalleform');
+Route::post('getsalles','SalleController@store');
+/**modfier salle */
+Route::get('getsalles/{id}/edit','SalleController@editsalle');
+Route::put('getsalles/{id}','SalleController@update');
+/**supprimer enseignant */
+Route::delete('getsalles/{id}','SalleController@destroy')->name('salle.destroy');
+
+
+
+
+
