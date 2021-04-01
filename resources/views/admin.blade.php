@@ -24,19 +24,19 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="/getmodules">
               <i class="now-ui-icons files_paper"></i>
               <p>Modules</p>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="/getniveaux">
               <i class="now-ui-icons education_hat"></i>
               <p>Niveaux</p>
             </a>
           </li> 
           <li>
-            <a href="">
+            <a href="/getgroupes">
               <i class="now-ui-icons design_vector"></i>
               <p>Groupes</p>
             </a>

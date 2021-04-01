@@ -23,26 +23,26 @@
               <p>Enseignants</p>
             </a>
           </li>
-          <li>
+          <li >
             <a href="/getmodules">
               <i class="now-ui-icons files_paper"></i>
               <p>Modules</p>
             </a>
           </li>
-          <li>
+          <li class="active ">
             <a href="/getniveaux">
               <i class="now-ui-icons education_hat"></i>
               <p>Niveaux</p>
             </a>
           </li> 
           <li>
-            <a href="./icons.html">
+            <a href="/getgroupes">
               <i class="now-ui-icons design_vector"></i>
               <p>Groupes</p>
             </a>
           </li>
           
-          <li class="active ">
+          <li >
             <a href="/getsalles">
               <i class="now-ui-icons design_app"></i>
               <p>Salles</p>
@@ -72,7 +72,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Les salles</h4>
+                <h4 class="card-title">Les niveaux</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -82,23 +82,25 @@
                         ID
                       </th>
                       <th>
-                        NOM DE LA SALLE 
-                      </th>      
+                        Niveau
+                      </th>  
+                        
                     </thead>
                     <tbody>
                  
-                    @foreach ($salles as $s)
+                    @foreach ($niveaux as $n)
                       <tr>
                         <td>
-                        {{$s->id}}
+                        {{$n->id}}
                         </td>
                         <td>
-                        {{$s->nom}}
+                        {{$n->NiveauName}}
 
                         </td>
+                       
                         
                         <td class="text-right">
-                        <a href="{{url('getsalles/'.$s->id.'/edit')}}" class='btn btn-success'>Modifier</a>
+                        <a href="{{url('getniveaux/'.$n->id.'/edit')}}" class='btn btn-success'>Modifier</a>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
                           Supprimer
                         </button>
@@ -107,14 +109,14 @@
                              <div class="modal-dialog modal-dialog-centered" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                    <h6 class="modal-title" id="exampleModalLongTitle">Etes-vous sur de supprimer cette salle?</h6>
+                                    <h6 class="modal-title" id="exampleModalLongTitle">Etes-vous sur de supprimer ce niveau?</h6>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                  </div>
                                  <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                    <form method="post" action="{{url('getsalles/'.$s->id)}}" >
+                                    <form method="post" action="{{url('getniveaux/'.$n->id)}}" >
                                         {{csrf_field()}}
                                         {{method_field('DELETE')}}
                                       <input type="submit" value="Oui" class="btn btn-danger" />
@@ -132,7 +134,7 @@
                     </tbody>
 
                   </table>
-                  <button type="submit" class="btn btn-warning" style="position:relative;left:500px"><a href="/insalleform" style="color:white;">Ajouter une salle</a></button>
+                  <button type="submit" class="btn btn-warning" style="position:relative;left:500px"><a href="/insnivform" style="color:white;">Ajouter un niveau</a></button>
                 </div>
               </div>
             </div>

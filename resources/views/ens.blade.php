@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('content2')
+@section('content')
 
   <div class="wrapper ">
     <div class="sidebar" data-color="orange">
@@ -24,19 +24,19 @@
             </a>
           </li>
           <li>
-            <a href="./map.html">
+            <a href="/getmodules">
               <i class="now-ui-icons files_paper"></i>
               <p>Modules</p>
             </a>
           </li>
           <li>
-            <a href="/dashboard">
+            <a href="/getniveaux">
               <i class="now-ui-icons education_hat"></i>
               <p>Niveaux</p>
             </a>
           </li> 
           <li>
-            <a href="./icons.html">
+            <a href="/getgroupes">
               <i class="now-ui-icons design_vector"></i>
               <p>Groupes</p>
             </a>

@@ -13,8 +13,9 @@ class AddColumnEnsId extends Migration
      */
     public function up()
     {
-        Schema::table('module', function (Blueprint $table) {
-            //
+        Schema::table('modules', function (Blueprint $table) {
+             $table->integer('ens_id')->unsigned()->after('id');
+             $table->foreign('ens_id')->references('id')->on('enseignants');
         });
     }
 
@@ -25,8 +26,10 @@ class AddColumnEnsId extends Migration
      */
     public function down()
     {
-        Schema::table('module', function (Blueprint $table) {
-            //
+        Schema::table('modules', function (Blueprint $table) {
+        $table::dropForeign(['ens_id']);
+        $table::dropCulomn(['ens_id']);
+        
         });
     }
 }
