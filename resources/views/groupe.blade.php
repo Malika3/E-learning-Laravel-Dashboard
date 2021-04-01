@@ -29,13 +29,13 @@
               <p>Modules</p>
             </a>
           </li>
-          <li class="active ">
+          <li >
             <a href="/getniveaux">
               <i class="now-ui-icons education_hat"></i>
               <p>Niveaux</p>
             </a>
           </li> 
-          <li>
+          <li class="active ">
             <a href="/getgroupes">
               <i class="now-ui-icons design_vector"></i>
               <p>Groupes</p>
