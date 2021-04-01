@@ -24,7 +24,7 @@ Route::get("getens","EnsController@getens");
 Route::get("getsalles","SalleController@getsalles");
 Route::get("getmodules","ModuleController@getmodules");
 Route::get("getniveaux","NiveauxController@getniveaux");
-Route::get("getgroupes","GroupeController@getgroupes");
+Route::get("getseances","SeanceController@getseances");
 
 
 
@@ -85,5 +85,16 @@ Route::get('getgroupes/{id}/edit','GroupeController@editgroupe');
 Route::put('getgroupes/{id}','GroupeController@update');
 /**supprimer module */
 Route::delete('getgroupes/{id}','GroupeController@destroy')->name('groupe.destroy');
+
+
+
+/**Les routes du seance */
+Route::get('/inseance', 'SeanceController@inseance');
+Route::post('getseances','SeanceController@store');
+/**modfier module */
+Route::get('getseances/{id}/edit','SeanceController@editseance');
+Route::put('getseances/{id}','SeanceController@update');
+/**supprimer module */
+Route::delete('getseances/{id}','SeanceController@destroy')->name('seance.destroy');
 
 

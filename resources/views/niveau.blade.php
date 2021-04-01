@@ -51,7 +51,7 @@
           
           
           <li>
-            <a href="./typography.html">
+            <a href="/getseances">
               <i class="now-ui-icons ui-2_time-alarm"></i>
               <p>Seances</p>
             </a>

@@ -23,26 +23,26 @@
               <p>Enseignants</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="/getmodules">
               <i class="now-ui-icons files_paper"></i>
               <p>Modules</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="/getniveaux">
               <i class="now-ui-icons education_hat"></i>
               <p>Niveaux</p>
             </a>
           </li> 
-          <li class="active ">
-            <a href="/getgroupes">
+          <li>
+            <a href="./icons.html">
               <i class="now-ui-icons design_vector"></i>
               <p>Groupes</p>
             </a>
           </li>
           
-          <li >
+          <li class="active ">
             <a href="/getsalles">
               <i class="now-ui-icons design_app"></i>
               <p>Salles</p>
@@ -72,7 +72,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Les groupes</h4>
+                <h4 class="card-title">Les salles</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -82,25 +82,37 @@
                         ID
                       </th>
                       <th>
-                        Numero de group
-                      </th>  
-                        
+                        Jour de la seance
+                      </th> 
+                      <th>
+                        Heure Debut
+                      </th> 
+                      <th>
+                        Heure Fin
+                      </th>      
                     </thead>
                     <tbody>
                  
-                    @foreach ($groupes as $g)
+                    @foreach ($seances as $s)
                       <tr>
-                        <td>
-                        {{$g->id}}
-                        </td>
-                        <td>
-                        {{$g->num}}
+                      <td>
+                        {{$s->jour}}
 
                         </td>
-                       
+                        <td>
+                        {{$s->id}}
+                        </td>
+                        <td>
+                        {{$s->heureD}}
+
+                        </td>
+                        <td>
+                        {{$s->heureF}}
+
+                        </td>
                         
                         <td class="text-right">
-                        <a href="{{url('getgroupes/'.$g->id.'/edit')}}" class='btn btn-success'>Modifier</a>
+                        <a href="{{url('getseances/'.$s->id.'/edit')}}" class='btn btn-success'>Modifier</a>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
                           Supprimer
                         </button>
@@ -109,14 +121,14 @@
                              <div class="modal-dialog modal-dialog-centered" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                    <h6 class="modal-title" id="exampleModalLongTitle">Etes-vous sur de supprimer ce groupe?</h6>
+                                    <h6 class="modal-title" id="exampleModalLongTitle">Etes-vous sur de supprimer cette seance?</h6>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                  </div>
                                  <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                    <form method="post" action="{{url('getgroupes/'.$g->id)}}" >
+                                    <form method="post" action="{{url('gteseances/'.$s->id)}}" >
                                         {{csrf_field()}}
                                         {{method_field('DELETE')}}
                                       <input type="submit" value="Oui" class="btn btn-danger" />
@@ -134,7 +146,7 @@
                     </tbody>
 
                   </table>
-                  <button type="submit" class="btn btn-warning" style="position:relative;left:500px"><a href="/insgroupe" style="color:white;">Ajouter un groupe</a></button>
+                  <button type="submit" class="btn btn-warning" style="position:relative;left:500px"><a href="/inseance" style="color:white;">Ajouter une seance</a></button>
                 </div>
               </div>
             </div>
