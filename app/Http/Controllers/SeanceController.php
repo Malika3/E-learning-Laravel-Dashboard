@@ -46,6 +46,11 @@ public function editseance(Request $req2, $id){
   $seance->heureD=$request->input('heureD');
   $seance->heureF=$request->input('heureF');
   $seance->jour=$request->input('jour');
+  $seance->enseignant_id=$request->input('enseignant_id');
+  $seance->groupe_id=$request->input('groupe_id');
+  $seance->module_id=$request->input('module_id');
+  $seance->salle_id=$request->input('salle_id');
+
   $seance->save();
    return redirect('getseances');    
  }

@@ -42,7 +42,7 @@
             </a>
           </li>
           
-          <li class="active ">
+          <li >
             <a href="/getsalles">
               <i class="now-ui-icons design_app"></i>
               <p>Salles</p>
@@ -50,7 +50,7 @@
           </li>
           
           
-          <li>
+          <li class="active ">
             <a href="/getseances">
               <i class="now-ui-icons ui-2_time-alarm"></i>
               <p>Seances</p>
@@ -72,7 +72,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Les salles</h4>
+                <h4 class="card-title">Les seances</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -89,25 +89,54 @@
                       </th> 
                       <th>
                         Heure Fin
-                      </th>      
+                      </th>  
+                      <th>
+                        Groupe_id
+                      </th>  
+                      <th>
+                        Module_id
+                      </th>  
+                      <th>
+                        ENS_id
+                      </th> 
+                      <th>
+                        Salle_id
+                      </th>     
                     </thead>
                     <tbody>
                  
                     @foreach ($seances as $s)
-                      <tr>
+                      <tr> <td>
+                        {{$s->id}}
+                        </td>
+
                       <td>
                         {{$s->jour}}
 
                         </td>
-                        <td>
-                        {{$s->id}}
-                        </td>
+                       
                         <td>
                         {{$s->heureD}}
 
                         </td>
                         <td>
                         {{$s->heureF}}
+
+                        </td>
+                        <td>
+                        {{$s->groupe_id}}
+
+                        </td>
+                        <td>
+                        {{$s->module_id}}
+
+                        </td>
+                        <td>
+                        {{$s->enseignant_id}}
+
+                        </td>
+                        <td>
+                        {{$s->salle_id}}
 
                         </td>
                         
