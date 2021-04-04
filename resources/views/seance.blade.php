@@ -57,7 +57,7 @@
             </a>
           </li>
           <li>
-            <a href="./typography.html">
+            <a href="/getempt">
               <i class="now-ui-icons ui-1_calendar-60"></i>
               <p>Emploi du temps</p>
             </a>

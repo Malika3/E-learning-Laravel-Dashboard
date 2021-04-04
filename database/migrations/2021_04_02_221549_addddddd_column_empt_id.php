@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEnseignantsTable extends Migration
+class AdddddddColumnEmptId extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateEnseignantsTable extends Migration
      */
     public function up()
     {
-        Schema::create('enseignants', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->string('grade');
-            $table->timestamps();
+        Schema::table('groupes', function (Blueprint $table) {
+            $table->integer('empt_id')->unsigned()->after('id');
+            $table->foreign('empt_id')->references('id')->on('empts');
         });
     }
 
@@ -29,6 +26,8 @@ class CreateEnseignantsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('enseignants');
+        Schema::table('groupes', function (Blueprint $table) {
+            //
+        });
     }
 }

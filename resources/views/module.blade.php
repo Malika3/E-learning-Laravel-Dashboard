@@ -57,7 +57,7 @@
             </a>
           </li>
           <li>
-            <a href="./typography.html">
+            <a href="/getempt">
               <i class="now-ui-icons ui-1_calendar-60"></i>
               <p>Emploi du temps</p>
             </a>
@@ -72,7 +72,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Les salles</h4>
+                <h4 class="card-title">Les modules</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -100,7 +100,7 @@
 
                         </td>
                         <td>
-                        {{$m->ens_id}}
+                        {{$m->enseignant_id }}
 
                         </td>
                         

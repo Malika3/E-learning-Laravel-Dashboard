@@ -27,7 +27,10 @@ class GroupeController extends Controller
 public function store(Request $req){
  $groupe=new Groupe;
  $groupe->num= $req->input('num');
+ $niv->niveau_id=$req->input('niveau_id');
  $groupe->save();
+ $niv->niveau()->save();
+ $seance->seance()->save();
  return redirect('getgroupes');    
 
 

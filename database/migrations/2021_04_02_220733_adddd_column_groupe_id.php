@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnEnseignantId extends Migration
+class AddddColumnGroupeId extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class AddColumnEnseignantId extends Migration
     public function up()
     {
         Schema::table('seances', function (Blueprint $table) {
-            $table->integer('enseignant_id')->unsigned()->after('id');
-            $table->foreign('enseignant_id')->references('id')->on('enseignants');
+            $table->integer('groupe_id')->unsigned()->after('id');
+            $table->foreign('groupe_id')->references('id')->on('groupes');
         });
     }
 

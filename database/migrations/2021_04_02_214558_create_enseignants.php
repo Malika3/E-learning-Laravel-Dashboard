@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnSalleId extends Migration
+class CreateEnseignants extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class AddColumnSalleId extends Migration
      */
     public function up()
     {
-        Schema::table('seances', function (Blueprint $table) {
-            $table->integer('salle_id')->unsigned()->after('id');
-            $table->foreign('salle_id')->references('id')->on('salles');
+        Schema::create('enseignants', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('grade');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +29,6 @@ class AddColumnSalleId extends Migration
      */
     public function down()
     {
-        Schema::table('seances', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('enseignants');
     }
 }

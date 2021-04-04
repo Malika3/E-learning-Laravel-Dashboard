@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSeances extends Migration
+class AdddddddColumnSalleId extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateSeances extends Migration
      */
     public function up()
     {
-        Schema::create('seances', function (Blueprint $table) {
-            $table->id();
-            $table->string('heureD');
-            $table->string('heureF');
-            $table->string('jour');
-            $table->timestamps();
+        Schema::table('empts', function (Blueprint $table) {
+            $table->integer('salle_id')->unsigned()->after('id');
+            $table->foreign('salle_id')->references('id')->on('salles');
         });
     }
 
@@ -29,6 +26,8 @@ class CreateSeances extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seances');
+        Schema::table('empts', function (Blueprint $table) {
+            //
+        });
     }
 }

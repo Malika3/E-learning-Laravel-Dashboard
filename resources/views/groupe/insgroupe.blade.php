@@ -12,6 +12,15 @@
                 <label for="num">Numero de groupe</label><input type="text" name="num" class="form-control">
                 </div>
 
+                <div class="form-group">
+                <label for="seance_id"> La seance de ce groupe</label><input type="text" name="seance_id" class="form-control">
+                </div>
+
+
+                <div class="form-group">
+                <label for="niveau_id"> Le Niveau</label><input type="text" name="niveau_id" class="form-control">
+                </div>
+
                 
 
                 <div class="form-group">

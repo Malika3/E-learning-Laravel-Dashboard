@@ -21,7 +21,8 @@ class EnsController extends Controller
       return view('ens',['enseignants' => $ens]);
 
     }
-   
+    
+    
  
    //La méthode d'insertion
    public function iEnsForm(){

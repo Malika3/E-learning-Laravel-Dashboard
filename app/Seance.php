@@ -31,27 +31,31 @@ class Seance extends Model
     }
     public function Enseignants()
     {
-        return $this->hasMany(enseignant::class);
+        return $this->hasMany('App\Enseignant');
     }
 
-
-    public function seancesGroupes()
-    {
-        return $this->hasMany(groupe::class, 'groupe_id', 'id');
-    }
-    public function Groupes()
-    {
-        return $this->hasMany(groupe::class);
-    }
-
-    public function seancesModules()
-    {
-        return $this->hasMany(module::class, 'module_id', 'id');
-    }
     public function Modules()
     {
-        return $this->hasMany(module::class);
+        return $this->hasMany('App\Module');
+    }
+   
+    public function Groupes()
+    {
+        return $this->hasMany('App\Groupe');
     }
 
+    public function Salles()
+    {
+        return $this->hasMany('App\Salle');
+    }
+    
+    public function niveau()
+    {
+        return $this->belongsTo('App\Niveau');
+    }
 
+    public function empt()
+    {
+        return $this->belongsTo('App\Empt');
+    }
 }

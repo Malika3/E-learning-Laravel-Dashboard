@@ -57,7 +57,7 @@
             </a>
           </li>
           <li>
-            <a href="getempt">
+            <a href="/getempt">
               <i class="now-ui-icons ui-1_calendar-60"></i>
               <p>Emploi du temps</p>
             </a>
@@ -72,42 +72,109 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Admins</h4>
+                <h4 class="card-title"> Emploi pour quel niveau</h4>
+                <form action="filter" method="get">
+                 {{ csrf_field() }}
+                 <select name="niveaux"  onchange='this.form.submit()'>
+                    <option selected value="bla">Selectionnez un niveau</option>  
+                      @foreach ($empts as $empt)
+                       @foreach ($empt->niveaux as $niveau)
+                      </option>
+                      <option value="{{$niveau->id}}"><a href="{{url('getempt/'.$niveau->id.'/affempt')}}" class='btn btn-success'>{{$niveau->NiveauName}}</a>
+                        @endforeach 
+                          @endforeach
+                    </select>
+                    <noscript>
+                        <input type="submit" value="Submit">
+                    </noscript>
+
+                </form>
+                    <br/>
+                    <br/>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-primary">
+                    
                       <th>
-                        ID
+                        Jour
                       </th>
                       <th>
-                        NOM
+                        Heure Debut et Heure Fin
                       </th>
                       <th>
-                        E-MAIL
+                      Les Groupes
+                      </th>
+                      <th>
+                      Module
+                      </th>
+                      <th>
+                      Salle occupée
+                      </th>
+                      <th>
+                      Ens responsable
                       </th>
                     </thead>
                     <tbody>
-                    @foreach ($users as $admin)
-                      <tr>
-                        <td>
-                        {{$admin->id}}
-                        </td>
-                        <td>
-                        {{$admin->name}}
+                    @foreach ($empts as $empt)
+                       @foreach ($empt->seances as $seance)
+                        @foreach ($empt->niveaux as $niveau)
+                              @foreach ($empt->ens as $ens)
+                                @foreach ($empt->modules as $module)
+                                  @foreach ($empt->groupes as $groupe)
+                                  @foreach ($empt->salles as $salle)
+                                  <tr>
 
-                        </td>
-                        <td>
-                        {{$admin->email}}
-                        </td>
-                        <td class="text-right">
-                        <a href="#" class='btn btn-success'>Modifier</a>
-                        <a href="#" class='btn btn-danger'>Supprimer</a>
-                        </td>
-                      </tr>
+                        @if($niveau->id == $seance->niveau_id and $niveau->seance_id == $seance->id)
+                    <td>
+                     {{$seance->jour}}
+                    </td>
+                    <td>
+                     {{$seance->heureD}} -- {{$seance->heureF}}
+                    </td>
+                    <td>
+                     {{$groupe->num}}
+                    </td><td>
+                     {{$module->moduleName}}
+                    </td>
+                    <td>
+                     {{$salle->nom}}
+                    </td>
+                    <td>
+                     {{$ens->name}}
+                    </td>
+                     @else
+                     <td>
+                     PAS DE SEANCE
+                    </td>
+                  
+                    <td>
+                    PAS DE SEANCE
+
+                    </td>
+                    <td>
+                    PAS DE SEANCE
+                    </td>
+                    <td>
+                    PAS DE SEANCE
+                    </td>
+                    <td>
+                    PAS DE SEANCE
+                    </td>
+                    <td>
+                    PAS DE SEANCE
+                    </td>
+                    </tr>
+                      @endif  
+                      </tr>        
                       @endforeach
-                    
+                          @endforeach
+                            @endforeach
+                              @endforeach
+                                @endforeach
+                                  @endforeach
+                                  @endforeach
                     </tbody>
                   </table>
                 </div>

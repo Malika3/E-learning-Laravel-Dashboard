@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnGroupeId extends Migration
+class AdddColumnSeanceId extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddColumnGroupeId extends Migration
      */
     public function up()
     {
-        Schema::table('seances', function (Blueprint $table) {
-            $table->integer('groupe_id')->unsigned()->after('id');
-            $table->foreign('groupe_id')->references('id')->on('groupes');
+        Schema::table('groupes', function (Blueprint $table) {
+            $table->integer('seance_id')->unsigned()->after('id');
+            $table->foreign('seance_id')->references('id')->on('seances');
         });
     }
 
@@ -26,7 +26,7 @@ class AddColumnGroupeId extends Migration
      */
     public function down()
     {
-        Schema::table('seances', function (Blueprint $table) {
+        Schema::table('groupes', function (Blueprint $table) {
             //
         });
     }

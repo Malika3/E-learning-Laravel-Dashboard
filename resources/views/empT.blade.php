@@ -3,10 +3,10 @@
 
   <div class="wrapper ">
     <div class="sidebar" data-color="orange">
-      <!-- Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow -->
+            <!-- Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow -->
       <div class="logo">
        
-        <h5 style="color:white">E-learn Dashboard</h5>
+      <h5 style="color:white">E-learn Dashboard</h5>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
@@ -17,7 +17,7 @@
             </a>
           </li>
           <li>
-          <li >
+          <li>
             <a href="/getens">
               <i class="now-ui-icons users_single-02"></i>
               <p>Enseignants</p>
@@ -36,13 +36,13 @@
             </a>
           </li> 
           <li>
-            <a href="./icons.html">
+            <a href="/getgroupes">
               <i class="now-ui-icons design_vector"></i>
               <p>Groupes</p>
             </a>
           </li>
           
-          <li class="active ">
+          <li>
             <a href="/getsalles">
               <i class="now-ui-icons design_app"></i>
               <p>Salles</p>
@@ -56,7 +56,7 @@
               <p>Seances</p>
             </a>
           </li>
-          <li>
+          <li class="active ">
             <a href="/getempt">
               <i class="now-ui-icons ui-1_calendar-60"></i>
               <p>Emploi du temps</p>
@@ -72,67 +72,56 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Les salles</h4>
+                <h4 class="card-title"> Emploi pour quel niveau</h4>
+                <form action="filter" method="get">
+                 {{ csrf_field() }}
+                 <select name="niveaux"  onchange='this.form.submit()'>
+                    <option selected value="bla">Selectionnez un niveau</option>  
+                      @foreach ($empts as $empt)
+                        @foreach ($empt->niveaux as $niveau)
+                         
+                      </option>
+                      <option value="{{$niveau->NiveauName}}"><a href="{{url('getempt/'.$niveau->id.'/affempt')}}" class='btn btn-success'>{{$niveau->NiveauName}}</a>
+                        @endforeach 
+                        @endforeach
+                         
+                    </select>
+                    <noscript>
+                        <input type="submit" value="Submit">
+                    </noscript>
+
+                </form>
+                    <br/>
+                    <br/>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-primary">
+                    
                       <th>
-                        ID
+                        Jour
                       </th>
                       <th>
-                        NOM DE LA SALLE 
-                      </th>      
+                        Heure Debut et Heure Fin
+                      </th>
+                      <th>
+                      Les Groupes
+                      </th>
+                      <th>
+                      Module
+                      </th>
+                      <th>
+                      Salle occupée
+                      </th>
+                      <th>
+                      Ens responsable
+                      </th>
                     </thead>
                     <tbody>
-                 
-                    @foreach ($salles as $s)
-                      <tr>
-                        <td>
-                        {{$s->id}}
-                        </td>
-                        <td>
-                        {{$s->nom}}
-
-                        </td>
-                        
-                        <td class="text-right">
-                        <a href="{{url('getsalles/'.$s->id.'/edit')}}" class='btn btn-success'>Modifier</a>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
-                          Supprimer
-                        </button>
-
-                           <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                             <div class="modal-dialog modal-dialog-centered" role="document">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                    <h6 class="modal-title" id="exampleModalLongTitle">Etes-vous sur de supprimer cette salle?</h6>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                 </div>
-                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                    <form method="post" action="{{url('getsalles/'.$s->id)}}" >
-                                        {{csrf_field()}}
-                                        {{method_field('DELETE')}}
-                                      <input type="submit" value="Oui" class="btn btn-danger" />
-                                     </form>
-                                </div>
-                              </div>
-                             </div>
-                          </div>
-                        
-                        </td>
-                      </tr>
-        
-                  @endforeach
-
+                   
                     </tbody>
-
                   </table>
-                  <button type="submit" class="btn btn-warning" style="position:relative;left:500px"><a href="/insalleform" style="color:white;">Ajouter une salle</a></button>
                 </div>
               </div>
             </div>

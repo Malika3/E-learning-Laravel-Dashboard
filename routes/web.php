@@ -25,6 +25,20 @@ Route::get("getsalles","SalleController@getsalles");
 Route::get("getmodules","ModuleController@getmodules");
 Route::get("getniveaux","NiveauxController@getniveaux");
 Route::get("getseances","SeanceController@getseances");
+Route::get("getgroupes","GroupeController@getgroupes");
+
+
+
+/**Les routes de l'emploi */
+
+Route::get("getnivempt","emptController@getnivempt");
+Route::get("getempt","emptController@getempt");
+
+Route::get("filter","emptController@filter");
+Route::get("get1CPI","emptController@get1CPI");
+
+
+
 
 
 
