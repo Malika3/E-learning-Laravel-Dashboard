@@ -78,7 +78,8 @@
                  <select name="niveaux"  onchange='this.form.submit()'>
                     <option selected value="bla">Selectionnez un niveau</option>  
                       @foreach ($empts as $empt)
-                        @foreach ($empt->niveaux as $niveau)
+                           @foreach ($empt->niveaux as $niveau)
+                             
                          
                       </option>
                       <option value="{{$niveau->NiveauName}}"><a href="{{url('getempt/'.$niveau->id.'/affempt')}}" class='btn btn-success'>{{$niveau->NiveauName}}</a>

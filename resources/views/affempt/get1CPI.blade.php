@@ -126,7 +126,7 @@
                                   @foreach ($empt->salles as $salle)
                                   <tr>
 
-                        @if($niveau->id == $seance->niveau_id and $niveau->seance_id == $seance->id)
+                   @if($niveau->emp_id == $empt->niveau_id and $ens->emp_id == $empt->enseignant_id and $module->emp_id == $empt->module_id and $groupe->empt_id == $empt->groupe_id and $salle->emp_id == $empt->id)
                     <td>
                      {{$seance->jour}}
                     </td>
