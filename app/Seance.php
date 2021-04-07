@@ -27,16 +27,16 @@ class Seance extends Model
 
     public function seancesEnseignants()
     {
-        return $this->hasMany(enseignant::class, 'enseignant_id', 'id');
+        return $this->hasOne(enseignant::class, 'enseignant_id', 'id');
     }
     public function Enseignants()
     {
-        return $this->hasMany('App\Enseignant');
+        return $this->hasOne('App\Enseignant');
     }
 
     public function Modules()
     {
-        return $this->hasMany('App\Module');
+        return $this->hasOne('App\Module');
     }
    
     public function Groupes()
@@ -46,7 +46,7 @@ class Seance extends Model
 
     public function Salles()
     {
-        return $this->hasMany('App\Salle');
+        return $this->hasOne('App\Salle');
     }
     
     public function niveau()

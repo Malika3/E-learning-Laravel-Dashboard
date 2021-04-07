@@ -16,8 +16,4 @@ public function groupes()
     return $this->hasMany('App\Groupe');
 }
 
-public function seances()
-{
-    return $this->hasMany('App\Seance');
-}
 }

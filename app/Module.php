@@ -10,4 +10,9 @@ class Module extends Model
   {
       return $this->belongsTo('App\Empt');
   }
+
+  public function ens()
+  {
+      return $this->hasMany('App\Enseignant');
+  }
 }
