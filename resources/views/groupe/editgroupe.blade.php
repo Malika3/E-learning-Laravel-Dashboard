@@ -15,6 +15,14 @@
                 <label for="num">Numero de groupe</label>
                 <input type="text" name="num" class="form-control" value="{{$groupes->num}}">
                 </div>
+                <div class="form-group">
+                <label for="niveau_id">Niveau ID</label>
+                <input type="text" name="niveau_id" class="form-control" value="{{$groupes->niveau_id}}">
+                </div>
+                <div class="form-group">
+                <label for="seance_id">Seance ID</label>
+                <input type="text" name="seance_id" class="form-control" value="{{$groupes->seance_id}}">
+                </div>
 
                
 

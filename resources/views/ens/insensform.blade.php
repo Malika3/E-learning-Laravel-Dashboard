@@ -17,7 +17,11 @@
                 </div>
 
                 <div class="form-group">
-                <label for="Grade">Grade:</label><input type="text" name="grade" class="form-control">
+                <label for="grade">Grade:</label><input type="text" name="grade" class="form-control">
+                </div>
+
+                <div class="form-group">
+                <label for="module_id">Module_id:</label><input type="text" name="module_id" class="form-control">
                 </div>
 
                 <div class="form-group">

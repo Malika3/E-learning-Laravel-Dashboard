@@ -26,7 +26,6 @@ class ModuleController extends Controller
 public function store(Request $req){
  $module=new Module;
  $module->moduleName = $req->input('moduleName');
- $module->ens_id =enseignants('id');
  $module->save();
  return redirect('getmodules');    
 
@@ -43,7 +42,6 @@ public function update(Request $request, $id){
 
  $module = Module::find($id);
  $module->moduleName=$request->input('moduleName');
- $module->ens_id =$request->input('ens_id');
  $module->save();
   return redirect('getmodules');    
 }

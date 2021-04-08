@@ -90,6 +90,9 @@
                       <th>
                         GRADE
                       </th>
+                      <th>
+                        Module_id
+                      </th>
                     </thead>
                     <tbody>
                     @foreach ($enseignants as $ens)
@@ -106,6 +109,9 @@
                         </td>
                         <td>
                         {{$ens->grade}}
+                        </td>
+                        <td>
+                        {{$ens->module_id}}
                         </td>
                         <td class="text-right">
                         <a href="{{url('getens/'.$ens->id.'/edit')}}" class='btn btn-success'>Modifier</a>

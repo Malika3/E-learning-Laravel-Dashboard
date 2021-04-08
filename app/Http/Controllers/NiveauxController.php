@@ -28,6 +28,9 @@ class NiveauxController extends Controller
     {
         $niveau =new Niveau;
         $niveau->NiveauName=$request->input('NiveauName');
+        $niveau->groupe_id=$request->input('groupe_id');
+        $niveau->seance_id=$request->input('seance_id');
+
         $niveau->save();
         return redirect('getniveaux');    
     }

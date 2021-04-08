@@ -27,6 +27,11 @@
                 </div>
 
                 <div class="form-group">
+                <label for="Grade">Module ID:</label>
+                <input type="text" name="module_id" class="form-control" value="{{$enseignant->module_id}}">
+                </div>
+
+                <div class="form-group">
                 <input type="submit" class="form-control btn btn-danger" value="Modifier">
                 </div>
             </form>

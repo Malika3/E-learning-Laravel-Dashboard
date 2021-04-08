@@ -84,6 +84,13 @@
                       <th>
                         Numero de group
                       </th>  
+                      <th>
+                      Seance_ID
+                      </th>  
+                      <th>
+                        Niveau_ID
+                      </th>  
+                        
                         
                     </thead>
                     <tbody>
@@ -95,6 +102,13 @@
                         </td>
                         <td>
                         {{$g->num}}
+
+                        </td>
+                        <td>
+                        {{$g->seance_id}}
+
+                        </td><td>
+                        {{$g->niveau_id}}
 
                         </td>
                        

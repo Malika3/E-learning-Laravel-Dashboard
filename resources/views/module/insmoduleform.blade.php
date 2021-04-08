@@ -11,9 +11,7 @@
                 <div class="form-group">
                 <label for="moduleName">MODULE</label><input type="text" name="moduleName" class="form-control">
                 </div>
-                <div class="form-group">
-                <label for="ens_id">ENS ID</label><input type="text" name="ens_id" class="form-control">
-                </div>
+                
                 <div class="form-group">
                 <input type="submit" class="form-control btn btn-warning" value="Ajouter">
                 </div>

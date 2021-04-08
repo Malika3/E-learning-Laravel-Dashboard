@@ -84,7 +84,12 @@
                       <th>
                         Niveau
                       </th>  
-                        
+                      <th>
+                        Seance Id
+                      </th>  
+                      <th>
+                        Groupe ID
+                      </th>  
                     </thead>
                     <tbody>
                  
@@ -95,6 +100,18 @@
                         </td>
                         <td>
                         {{$n->NiveauName}}
+
+                        </td>
+                        <td>
+                        {{$n->seance_id}}
+
+                        </td>
+                        <td>
+                        {{$n->seance_id}}
+
+                        </td>
+                        <td>
+                        {{$n->groupe_id}}
 
                         </td>
                        

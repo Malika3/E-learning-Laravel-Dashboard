@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Enseignant;
+use App\Module;
+
 class EnsController extends Controller
 {
 
@@ -31,9 +33,15 @@ class EnsController extends Controller
 
 public function store(Request $req){
   $ens=new Enseignant;
+
+
+  $ens->module_id=$req->input('module_id');
+
   $ens->name = $req->input('name');
   $ens->email = $req->input('email');
   $ens->grade = $req->input('grade');
+  $ens->module_id = $req->input('module_id');
+
   $ens->save();
   return redirect('getens');    
 
@@ -49,9 +57,15 @@ public function editEns(Request $req2, $id){
 public function update(Request $request, $id){
 
   $ens = Enseignant::find($id);
+
+  $ens = Enseignant::whereIn('module_id', Module::find($id));
+
+  $ens = $ens->where('module_id',$request->input('module_id'));
   $ens->name=$request->input('name');
   $ens->email=$request->input('email');
   $ens->grade=$request->input('grade');
+  $ens->module_id=$request->input('module_id');
+
   $ens->save();
    return redirect('getens');    
 }

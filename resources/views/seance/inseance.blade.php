@@ -19,6 +19,25 @@
                 </div>
 
                 <div class="form-group">
+                <label for="groupe_id">Groupe ID </label><input type="text" name="groupe_id" class="form-control">
+                </div>
+
+                <div class="form-group">
+                <label for="niveau_id">Niveau ID </label><input type="text" name="niveau_id" class="form-control">
+                </div>
+
+                <div class="form-group">
+                <label for="module_id">Module ID </label><input type="text" name="module_id" class="form-control">
+                </div>
+
+                <div class="form-group">
+                <label for="enseignant_id">ENSEIGNANT ID </label><input type="text" name="enseignant_id" class="form-control">
+                </div>
+
+                <div class="form-group">
+                <label for="salle_id">Salle ID </label><input type="text" name="salle_id" class="form-control">
+                </div>
+                <div class="form-group">
                 <input type="submit" class="form-control btn btn-warning" value="Ajouter">
                 </div>
             </form>

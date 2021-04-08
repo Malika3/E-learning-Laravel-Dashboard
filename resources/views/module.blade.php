@@ -84,9 +84,7 @@
                       <th>
                         NOM Du Modue 
                       </th>  
-                      <th>
-                        ID ENS RESPONSABLE
-                      </th>     
+                        
                     </thead>
                     <tbody>
                  
@@ -99,10 +97,7 @@
                         {{$m->moduleName}}
 
                         </td>
-                        <td>
-                        {{$m->enseignant_id }}
-
-                        </td>
+                      
                         
                         <td class="text-right">
                         <a href="{{url('getmodules/'.$m->id.'/edit')}}" class='btn btn-success'>Modifier</a>

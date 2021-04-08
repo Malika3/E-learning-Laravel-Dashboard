@@ -27,10 +27,9 @@ class GroupeController extends Controller
 public function store(Request $req){
  $groupe=new Groupe;
  $groupe->num= $req->input('num');
- $niv->niveau_id=$req->input('niveau_id');
+ $groupe->niveau_id=$req->input('niveau_id');
+ $groupe->seance_id=$req->input('seance_id');
  $groupe->save();
- $niv->niveau()->save();
- $seance->seance()->save();
  return redirect('getgroupes');    
 
 
@@ -45,6 +44,8 @@ public function editgroupe(Request $req2, $id){
 public function update(Request $request, $id){
  $groupe = Groupe::find($id);
  $groupe->num=$request->input('num');
+ $groupe->niveau_id=$request->input('niveau_id');
+ $groupe->seance_id=$request->input('seance_id');
  $groupe->save();
   return redirect('getgroupes');    
 }

@@ -36,7 +36,7 @@
             </a>
           </li> 
           <li>
-            <a href="./icons.html">
+            <a href="/getgroupes">
               <i class="now-ui-icons design_vector"></i>
               <p>Groupes</p>
             </a>

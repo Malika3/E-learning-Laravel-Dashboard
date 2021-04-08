@@ -37,6 +37,11 @@
                 </div>
 
                 <div class="form-group">
+                <label for="niveau_id">Niveau Id</label>
+                <input type="text" name="niveau_id" class="form-control" value="{{$seances->niveau_id}}">
+                </div>
+
+                <div class="form-group">
                 <label for="enseignant_id">Enseignant_id</label>
                 <input type="text" name="enseignant_id" class="form-control" value="{{$seances->enseignant_id}}">
                 </div>

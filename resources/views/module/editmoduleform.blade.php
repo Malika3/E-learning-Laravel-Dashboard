@@ -14,9 +14,7 @@
                 <div class="form-group">
                 <label for="moduleName">Nom du module:</label>
                 <input type="text" name="moduleName" class="form-control" value="{{$modules->moduleName}}">
-                <label for="ens_id">ID du Prof Responsable:</label>
-                <input type="text" name="ens_id" class="form-control" value="{{$modules->ens_id}}">
-
+                
                 </div>
 
                 <div class="form-group">

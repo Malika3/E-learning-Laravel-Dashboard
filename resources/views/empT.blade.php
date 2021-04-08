@@ -81,8 +81,7 @@
                            @foreach ($empt->niveaux as $niveau)
                              
                          
-                      </option>
-                      <option value="{{$niveau->NiveauName}}"><a href="{{url('getempt/'.$niveau->id.'/affempt')}}" class='btn btn-success'>{{$niveau->NiveauName}}</a>
+                      <option value="{{$niveau->id}}"><a href="{{url('getempt/'.$niveau->id.'/affempt')}}" class='btn btn-success'>{{$niveau->NiveauName}}</a></option>
                         @endforeach 
                         @endforeach
                          

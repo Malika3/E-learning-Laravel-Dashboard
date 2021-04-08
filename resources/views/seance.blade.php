@@ -94,6 +94,9 @@
                         Groupe_id
                       </th>  
                       <th>
+                        Niveau Id
+                      </th> 
+                      <th>
                         Module_id
                       </th>  
                       <th>
@@ -125,6 +128,10 @@
                         </td>
                         <td>
                         {{$s->groupe_id}}
+
+                        </td>
+                        <td>
+                        {{$s->niveau_id}}
 
                         </td>
                         <td>
